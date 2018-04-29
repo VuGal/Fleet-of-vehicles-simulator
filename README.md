@@ -1,7 +1,7 @@
 # Projekt
 Projekt C++ - Symulator floty pojazdów - Gałecki, Przybyło, Lis
 
-Obecna architektura programu:
+Obecna architektura programu (odpalcie w trybie Raw, żeby poprawnie zobaczyć):
 
 Symulator.cpp (główny plik) <----------------------------- classes.h
 |
