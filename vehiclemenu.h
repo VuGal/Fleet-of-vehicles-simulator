@@ -37,7 +37,7 @@ void vehiclemenu(){
 
 			case 2: {poprawna = true; system("CLS"); takenVehicles(); break;}
 
-			case 3: {cout << "Dodano nowy pojazd.";}
+			case 3: {cout << "Dodano nowy pojazd."; break;}
 
 			case 4: {poprawna = true; system("CLS"); mainmenu(); break;}
 

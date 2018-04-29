@@ -5,13 +5,18 @@
 
 using namespace std;
 
+extern int vehiclesCount;
+
 class Vehicle{
 
 	public:
+		Vehicle();
 		Vehicle(int);
+		Vehicle(int, bool);
 
 		//setters
-		void setVehicleType(string);
+		void setVehicleID(int);
+		void setVehicleType(int);
 		void setVehicleBrand(string);
 		void setVehicleModel(string);
 		void setVehicleEngine(string);
@@ -28,16 +33,20 @@ class Vehicle{
 
 	private:
 		int id_;
+		int type_;
 		bool isTaken_;
 
-		string type_;
 		string brand_;
 		string model_;
 		string engine_;
 		string equipment_;
 };
 
-void Vehicle::setVehicleType(string type){
+void Vehicle::setVehicleID(int id){
+	id_ = id;
+}
+
+void Vehicle::setVehicleType(int type){
 	type_ = type;
 }
 
@@ -85,13 +94,23 @@ void Vehicle::getVehicleEquipment(){
 	cout << equipment_ << "\n";
 }
 
+Vehicle::Vehicle(){
+	vehiclesCount++;
+}
+
 
 Vehicle::Vehicle(int id){
 	id_ = id;
 	isTaken_ = false;
 	cout << "Dodano nowy pojazd do bazy.\n";
+	vehiclesCount++;
 }
 
+Vehicle::Vehicle(int id, bool isTaken){
+	id_ = id;
+	isTaken_ = isTaken;
+	vehiclesCount++;
+}
 
 class Car: public Vehicle{
 
