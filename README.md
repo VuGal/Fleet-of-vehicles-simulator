@@ -22,7 +22,7 @@ Symulator.cpp (główny plik) <----------------------------- classes.h
 Proponuję jak najwięcej obiektówki, żeby móc działać w różny sposob na tych "pojazdach", działanie na plikach tekstowych jest żmudne i nieefektywne.
 
 
-Można do <vector> wpakować pojazdy i wyciągać je np. vector.at(), każdy pojazd ma swoje unikalne ID, jakoś się skmini, żeby przy usuwaniu je zachowywały.
+Można do '<vector>' wpakować pojazdy i wyciągać je np. vector.at(), każdy pojazd ma swoje unikalne ID, jakoś się skmini, żeby przy usuwaniu je zachowywały.
             
 Chciałem zrobić aktualną prędkość i współrzędne geograficzne oparte na srandzie() [a jak inaczej xD], i alerty związane z przekroczeniem itd.
 
