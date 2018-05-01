@@ -16,6 +16,12 @@ extern int employeesCount;
 extern vector <Vehicle*> listaPojazdow;
 extern vector <Employee*> listaPracownikow;
 
+extern vector <Vehicle*> wolnePojazdy;
+extern vector <Vehicle*> uzywanePojazdy;
+
+extern vector <Employee*> wolniPracownicy;
+extern vector <Employee*> zajeciPracownicy;
+
 void loadVehicleList(){
 
 	bool isEmpty;
@@ -161,7 +167,7 @@ void addEmployee(){
 
 	Employee* v1 = new Employee();
 
-	int id; bool isBusy; string name, surname; double salary;
+	string name, surname; double salary;
 
 	v1->setEmployeeID(employeesCount);
 	v1->setEmployeeIsBusy(0);
@@ -174,6 +180,73 @@ void addEmployee(){
 	system("CLS");
 }
 
+void categorizeVehicles(){
+
+		bool isTaken;
+
+		for(unsigned int i=0; i<listaPojazdow.size(); i++){
+
+			listaPojazdow.at(i)->saveVehicleIsTaken(&isTaken);
+
+			if(isTaken==0){
+
+				Vehicle* v2 = new Vehicle();
+
+				int id, type; string brand, model, engine, equipment;
+
+				v2->setVehicleIsTaken(0);
+
+				listaPojazdow.at(i)->saveVehicleID(&id);
+				v2->setVehicleID(id);
+
+				listaPojazdow.at(i)->saveVehicleType(&type);
+				v2->setVehicleID(type);
+
+				listaPojazdow.at(i)->saveVehicleBrand(&brand);
+				v2->setVehicleBrand(brand);
+
+				listaPojazdow.at(i)->saveVehicleModel(&model);
+				v2->setVehicleModel(model);
+
+				listaPojazdow.at(i)->saveVehicleEngine(&engine);
+				v2->setVehicleEngine(engine);
+
+				listaPojazdow.at(i)->saveVehicleEquipment(&equipment);
+				v2->setVehicleEquipment(equipment);
+
+				wolnePojazdy.push_back(v2);
+			}
+
+			else {
+
+				Vehicle* v2 = new Vehicle();
+
+				int id, type; string brand, model, engine, equipment;
+
+				v2->setVehicleIsTaken(1);
+
+				listaPojazdow.at(i)->saveVehicleID(&id);
+				v2->setVehicleID(id);
+
+				listaPojazdow.at(i)->saveVehicleType(&type);
+				v2->setVehicleID(type);
+
+				listaPojazdow.at(i)->saveVehicleBrand(&brand);
+				v2->setVehicleBrand(brand);
+
+				listaPojazdow.at(i)->saveVehicleModel(&model);
+				v2->setVehicleModel(model);
+
+				listaPojazdow.at(i)->saveVehicleEngine(&engine);
+				v2->setVehicleEngine(engine);
+
+				listaPojazdow.at(i)->saveVehicleEquipment(&equipment);
+				v2->setVehicleEquipment(equipment);
+
+				uzywanePojazdy.push_back(v2);
+			}
+		}
+}
 
 void exitProgram(){
 	saveVehicleList();

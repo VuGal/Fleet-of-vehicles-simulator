@@ -6,31 +6,32 @@
 using namespace std;
 
 extern vector <Vehicle*> listaPojazdow;
+extern vector <Vehicle*> wolnePojazdy;
+
+extern void vehicleInfoMenu(int, int);
 
 void availableVehicles(){
 
 	system("CLS");
 
-	bool isTaken;
-	int count = 1;
 	int vehicle_choice;
 
-	for(unsigned int i=0; i<listaPojazdow.size(); i++){
-
-		listaPojazdow.at(i)->saveVehicleIsTaken(&isTaken);
-
-		if(isTaken==0){
-			cout << count << ". ";
-			listaPojazdow.at(i)->getVehicleBrand();
+	for(unsigned int i=0; i<wolnePojazdy.size(); i++){
+{
+			cout << i+1 << ". ";
+			wolnePojazdy.at(i)->getVehicleBrand();
 			cout << " ";
-			listaPojazdow.at(i)->getVehicleModel();
+			wolnePojazdy.at(i)->getVehicleModel();
 			cout << "\n";
-			count++;
 		}
 	}
 
-	cout << "\n\n\n\nWybierz samochod: ";
+	cout << "\n\n\n\nWybierz samochod (0 - powrot) : ";
 	cin >> vehicle_choice;
+
+	if(vehicle_choice == 0) {system("CLS"); vehiclemenu();}
+	else{vehicleInfoMenu(vehicle_choice-1, 2);}
+
 
 };
 

@@ -5,6 +5,8 @@
 
 using namespace std;
 
+bool isBusy;
+
 void employeePersonalMenu(int employee_choice){
 
 	system("CLS");
@@ -17,9 +19,17 @@ void employeePersonalMenu(int employee_choice){
 	cout << "\n===============================================\n\n";
 
 	cout << "Zarobki: "; listaPracownikow.at(employee_choice)->getEmployeeSalary();
+
+	cout << "\nAKTUALNIE W TRASIE: ";
+
+	listaPracownikow.at(employee_choice)->saveEmployeeIsBusy(&isBusy);
+
+	if (isBusy == 0) {cout << "Nie";}
+	else {cout << "Tak";}
+
 	cout << "\n\n\n\n";
 
-	cout << "1. Powrot";
+	cout << "1. Powrot\n\n";
 
 	int choice;
 

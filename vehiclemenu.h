@@ -34,9 +34,9 @@ void vehiclemenu(){
 
 			switch (vehicle_menu_choice){
 
-			case 1: {poprawna = true; system("CLS"); availableVehicles(); break;}
+			case 1: {poprawna = true; system("CLS"); takenVehicles(); break;}
 
-			case 2: {poprawna = true; system("CLS"); takenVehicles(); break;}
+			case 2: {poprawna = true; system("CLS"); availableVehicles(); break;}
 
 			case 3: {addVehicle(); vehiclemenu(); break;}
 
