@@ -6,8 +6,6 @@
 
 using namespace std;
 
-extern int vehicle_menu_choice;
-
 extern void availableVehicles();
 extern void takenVehicles();
 extern void addVehicle();
@@ -24,6 +22,8 @@ void vehiclemenu(){
 	cout << "                   4. Powrot\n\n\n\n";
 
 	cout << "Wybierz opcje: ";
+
+	int vehicle_menu_choice;
 
 	cin >> vehicle_menu_choice;
 	cout << "\n";

@@ -33,7 +33,7 @@ class Vehicle{
 		void getVehicleEngine();
 		void getVehicleEquipment();
 
-		//for saving to files
+		//sending private variables to other variables in program
 		void saveVehicleID(int*);
 		void saveVehicleIsTaken(bool*);
 		void saveVehicleType(int*);
@@ -82,24 +82,26 @@ void Vehicle::setVehicleIsTaken(bool isTaken){
 	isTaken_ = isTaken;
 }
 
+// ----------------------------------------------------------
+
 void Vehicle::getVehicleID(){
-	cout << id_ << "\n";
+	cout << id_;
 }
 
 void Vehicle::getVehicleIsTaken(){
-	cout << isTaken_ << "\n";
+	cout << isTaken_;
 }
 
 void Vehicle::getVehicleType(){
-	cout << type_ << "\n";
+	cout << type_;
 }
 
 void Vehicle::getVehicleBrand(){
-	cout << brand_ << "\n";
+	cout << brand_;
 }
 
 void Vehicle::getVehicleModel(){
-	cout << model_ << "\n";
+	cout << model_;
 }
 
 void Vehicle::getVehicleEngine(){
@@ -109,6 +111,8 @@ void Vehicle::getVehicleEngine(){
 void Vehicle::getVehicleEquipment(){
 	cout << equipment_ << "\n";
 }
+
+// ----------------------------------------------------------
 
 void Vehicle::saveVehicleID(int* id){
 	*id = id_;
@@ -137,6 +141,8 @@ void Vehicle::saveVehicleEngine(string* engine){
 void Vehicle::saveVehicleEquipment(string* equipment){
 	*equipment = equipment_;
 }
+
+// ----------------------------------------------------------
 
 Vehicle::Vehicle(){
 	vehiclesCount++;
@@ -188,7 +194,7 @@ class Employee{
 		void getEmployeeSurname();
 		void getEmployeeSalary();
 
-		//for saving to files
+		//sending private variables to other variables in program
 		void saveEmployeeID(int*);
 		void saveEmployeeIsBusy(bool*);
 		void saveEmployeeName(string*);
@@ -226,29 +232,29 @@ void Employee::setEmployeeSalary(double salary){
 	salary_ = salary;
 }
 
-
+// ----------------------------------------------------------
 
 void Employee::getEmployeeID(){
-	cout << id_ << "\n";
+	cout << id_;
 }
 
 void Employee::getEmployeeIsBusy(){
-	cout << isBusy_ << "\n";
+	cout << isBusy_;
 }
 
 void Employee::getEmployeeName(){
-	cout << name_ << "\n";
+	cout << name_;
 }
 
 void Employee::getEmployeeSurname(){
-	cout << surname_ << "\n";
+	cout << surname_;
 }
 
 void Employee::getEmployeeSalary(){
-	cout << salary_ << "\n";
+	cout << salary_ ;
 }
 
-
+// ----------------------------------------------------------
 
 void Employee::saveEmployeeID(int* id){
 	*id = id_;
@@ -270,7 +276,7 @@ void Employee::saveEmployeeSalary(double* salary){
 	*salary = salary_;
 }
 
-
+// ----------------------------------------------------------
 
 Employee::Employee(){
 	employeesCount++;
@@ -290,5 +296,20 @@ Employee::Employee(int id, bool isBusy){
 	employeesCount++;
 }
 
+class Mission{
 
+public:
+
+private:
+
+	int employee_id_;
+	int vehicle_id_;
+
+	string starting_point_;
+	string end_point_;
+
+	double distance;
+
+
+};
 #endif /* CLASSES_H_ */

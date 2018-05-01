@@ -14,6 +14,8 @@
 #include "employeemenu.h"
 #include "availableVehicles.h"
 #include "takenVehicles.h"
+#include "employeeList.h"
+#include "employeePersonalMenu.h"
 
 
 using namespace std;
@@ -21,13 +23,9 @@ using namespace std;
 int vehiclesCount = 0;
 int employeesCount = 0;
 
-int start_menu_choice;
-int main_menu_choice;
-int vehicle_menu_choice;
-int employee_menu_choice;
-
 vector <Vehicle*> listaPojazdow;
 vector <Employee*> listaPracownikow;
+vector <Mission*> listaMisji;
 
 int main(){
 

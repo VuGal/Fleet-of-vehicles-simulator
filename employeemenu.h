@@ -6,9 +6,8 @@
 
 using namespace std;
 
-extern int employee_menu_choice;
-
 extern void mainmenu();
+extern void employeeList();
 
 void employeemenu(){
 
@@ -26,6 +25,8 @@ void employeemenu(){
 
 	cout << "Wybierz opcje: ";
 
+	int employee_menu_choice;
+
 	cin >> employee_menu_choice;
 	cout << "\n";
 
@@ -34,6 +35,8 @@ void employeemenu(){
 		while(poprawna == false){
 
 			switch (employee_menu_choice){
+
+			case 1: {poprawna = true; employeeList(); break;}
 
 			case 2: {poprawna = true; addEmployee(); employeemenu(); break;}
 

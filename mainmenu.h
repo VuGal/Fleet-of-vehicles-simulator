@@ -22,6 +22,9 @@ void mainmenu(){
 	cout << "               3. Powrot\n\n\n\n";
 
 	cout << "Wybierz opcje: ";
+
+	int main_menu_choice;
+
 	cin >> main_menu_choice;
 
 	cout << "\n";

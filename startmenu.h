@@ -5,8 +5,6 @@
 
 using namespace std;
 
-extern int start_menu_choice;
-
 extern void mainmenu();
 extern void exitProgram();
 
@@ -25,6 +23,9 @@ void startmenu(){
 	cout << "          3. Wyjscie\n\n\n\n";
 
 	cout << "Wybierz opcje: ";
+
+	int start_menu_choice;
+
 	cin >> start_menu_choice;
 	cout << "\n";
 
