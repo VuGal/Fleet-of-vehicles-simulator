@@ -17,7 +17,12 @@ void employeemenu(){
 	cout << "================================================\n\n";
 
 	cout << "               1. Lista pracownikow\n\n\n\n\n\n";
-	cout << "               2. Powrot\n\n\n\n";
+
+
+	cout << "               2. Dodaj pracownika\n\n\n\n\n\n";
+
+
+	cout << "               3. Powrot\n\n\n\n";
 
 	cout << "Wybierz opcje: ";
 
@@ -30,7 +35,9 @@ void employeemenu(){
 
 			switch (employee_menu_choice){
 
-			case 2: {poprawna = true; system("CLS"); mainmenu(); break;}
+			case 2: {poprawna = true; addEmployee(); employeemenu(); break;}
+
+			case 3: {poprawna = true; system("CLS"); mainmenu(); break;}
 
 			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> employee_menu_choice; cout << "\n";}
 			}

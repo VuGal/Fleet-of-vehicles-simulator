@@ -8,11 +8,12 @@ using namespace std;
 extern int start_menu_choice;
 
 extern void mainmenu();
+extern void exitProgram();
 
 void startmenu(){
 
 	cout << "-------------------------------------------------------------------------------\n";
-	cout << "-------------------    SYMULATOR FLOTY POJAZDOW v. 0.3      -------------------\n";
+	cout << "-------------------    SYMULATOR FLOTY POJAZDOW v. 0.5      -------------------\n";
 	cout << "-------------------------------------------------------------------------------\n";
 	cout << "-------------------------------------------------------------------------------\n";
 	cout << "--------    Autorzy: Galecki Wojciech, Lis Monika, Przybylo Wojciech    -------\n";
@@ -44,7 +45,7 @@ void startmenu(){
 		startmenu();
 		break;}
 
-		case 3: {exit(1);}
+		case 3: {exitProgram(); break;}
 
 		default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> start_menu_choice; cout << "\n";}
 		}

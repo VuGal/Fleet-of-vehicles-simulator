@@ -10,6 +10,7 @@ extern int vehicle_menu_choice;
 
 extern void availableVehicles();
 extern void takenVehicles();
+extern void addVehicle();
 
 void vehiclemenu(){
 
@@ -37,7 +38,7 @@ void vehiclemenu(){
 
 			case 2: {poprawna = true; system("CLS"); takenVehicles(); break;}
 
-			case 3: {cout << "Dodano nowy pojazd."; break;}
+			case 3: {addVehicle(); vehiclemenu(); break;}
 
 			case 4: {poprawna = true; system("CLS"); mainmenu(); break;}
 
