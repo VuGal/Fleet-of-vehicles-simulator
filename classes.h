@@ -7,6 +7,7 @@ using namespace std;
 
 extern int vehiclesCount;
 extern int employeesCount;
+extern int missionsCount;
 
 class Vehicle{
 
@@ -296,9 +297,36 @@ Employee::Employee(int id, bool isBusy){
 	employeesCount++;
 }
 
-class Mission{
+
+
+
+
+class Mission {
 
 public:
+
+	Mission();
+
+	//setters
+	void setMissionEmployeeID(int);
+	void setMissionVehicleID(int);
+	void setMissionStartingPoint(string);
+	void setMissionEndPoint(string);
+	void setMissionDistance(double);
+
+	//getters
+	void getMissionEmployeeID();
+	void getMissionVehicleID();
+	void getMissionStartingPoint();
+	void getMissionEndPoint();
+	void getMissionDistance();
+
+	//sending private variables to other variables in program
+	void saveMissionEmployeeID(int*);
+	void saveMissionVehicleID(int*);
+	void saveMissionStartingPoint(string*);
+	void saveMissionEndPoint(string*);
+	void saveMissionDistance(double*);
 
 private:
 
@@ -308,8 +336,79 @@ private:
 	string starting_point_;
 	string end_point_;
 
-	double distance;
-
-
+	double distance_;
 };
+
+void Mission::setMissionEmployeeID(int employee_id){
+	employee_id_ = employee_id;
+}
+
+void Mission::setMissionVehicleID(int vehicle_id){
+	vehicle_id_ = vehicle_id;
+}
+
+void Mission::setMissionStartingPoint(string starting_point){
+	starting_point_ = starting_point;
+}
+
+void Mission::setMissionEndPoint(string end_point){
+	end_point_ = end_point;
+}
+
+void Mission::setMissionDistance(double distance){
+	distance_ = distance;
+}
+
+// ----------------------------------------------------------
+
+void Mission::getMissionEmployeeID(){
+	cout << employee_id_;
+}
+
+void Mission::getMissionVehicleID(){
+	cout << vehicle_id_;
+}
+
+void Mission::getMissionStartingPoint(){
+	cout << starting_point_;
+}
+
+void Mission::getMissionEndPoint(){
+	cout << end_point_;
+}
+
+void Mission::getMissionDistance(){
+	cout << distance_ ;
+}
+
+// ----------------------------------------------------------
+
+void Mission::saveMissionEmployeeID(int* employee_id){
+	*employee_id = employee_id_;
+}
+
+void Mission::saveMissionVehicleID(int* vehicle_id){
+	*vehicle_id = vehicle_id_;
+}
+
+void Mission::saveMissionStartingPoint(string* starting_point){
+	*starting_point = starting_point_;
+}
+
+void Mission::saveMissionEndPoint(string* end_point){
+	*end_point = end_point_;
+}
+
+void Mission::saveMissionDistance(double* distance){
+	*distance = distance_;
+}
+
+// ----------------------------------------------------------
+
+Mission::Mission(){
+	missionsCount++;
+}
+
+
+
 #endif /* CLASSES_H_ */

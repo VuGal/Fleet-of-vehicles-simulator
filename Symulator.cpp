@@ -12,17 +12,20 @@
 #include "mainmenu.h"
 #include "vehiclemenu.h"
 #include "employeemenu.h"
+#include "missionmenu.h"
 #include "availableVehicles.h"
 #include "takenVehicles.h"
 #include "employeeList.h"
 #include "employeePersonalMenu.h"
 #include "vehicleInfoMenu.h"
+#include "currentMissions.h"
 
 
 using namespace std;
 
 int vehiclesCount = 0;
 int employeesCount = 0;
+int missionsCount = 0;
 
 //loaded from files
 vector <Vehicle*> listaPojazdow;
@@ -42,6 +45,7 @@ int main(){
 
 	loadVehicleList();
 	loadEmployeeList();
+	loadMissionList();
 	categorizeVehicles();
 
 	startmenu();

@@ -10,6 +10,7 @@ extern int main_menu_choice;
 extern void startmenu();
 extern void vehiclemenu();
 extern void employeemenu();
+extern void missionmenu();
 
 void mainmenu(){
 
@@ -18,8 +19,9 @@ void mainmenu(){
 	cout << "================================================\n\n";
 
 	cout << "               1. POJAZDY\n\n";
-	cout << "               2. PRACOWNICY\n\n\n\n\n\n";
-	cout << "               3. Powrot\n\n\n\n";
+	cout << "               2. PRACOWNICY\n\n\n\n";
+	cout << "               3. MISJE\n\n\n\n\n\n";
+	cout << "               4. Powrot\n\n\n\n";
 
 	cout << "Wybierz opcje: ";
 
@@ -39,7 +41,9 @@ void mainmenu(){
 
 			case 2: {poprawna = true; system("CLS"); employeemenu(); break;}
 
-			case 3: {poprawna = true; system("CLS"); startmenu(); break;}
+			case 3: {poprawna = true; system("CLS"); missionmenu(); break;}
+
+			case 4: {poprawna = true; system("CLS"); startmenu(); break;}
 
 			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> main_menu_choice; cout << "\n";}
 			}

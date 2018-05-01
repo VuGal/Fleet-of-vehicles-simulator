@@ -12,9 +12,11 @@ using namespace std;
 
 extern int vehiclesCount;
 extern int employeesCount;
+extern int missionsCount;
 
 extern vector <Vehicle*> listaPojazdow;
 extern vector <Employee*> listaPracownikow;
+extern vector <Mission*> listaMisji;
 
 extern vector <Vehicle*> wolnePojazdy;
 extern vector <Vehicle*> uzywanePojazdy;
@@ -142,8 +144,6 @@ void saveEmployeeList(){
 	ofstream fout;
 	fout.open("Pracownicy.txt");
 
-	if(fout.is_open()) {cout << "Otwarto plik.\n";}
-
 	int id; bool isBusy; string name, surname; double salary;
 
 	for(unsigned int i = 0; i < listaPracownikow.size(); i++){
@@ -248,9 +248,83 @@ void categorizeVehicles(){
 		}
 }
 
+void loadMissionList(){
+
+		bool isEmpty;
+
+		ifstream check_if_empty("Misje.txt", ios::ate);
+		check_if_empty.open("Misje.txt");
+		if(check_if_empty.tellg() == 0) {isEmpty = 1;}
+		else {isEmpty = 0;}
+		check_if_empty.close();
+
+		ifstream fin;
+		fin.open("Misje.txt");
+
+		if(isEmpty==0){
+
+			int employee_id, vehicle_id; string starting_point, end_point; double distance;
+
+			while(fin >> employee_id >> vehicle_id >> starting_point >> end_point >> distance){
+
+				Mission* v1 = new Mission();
+
+				v1->setMissionEmployeeID(employee_id);
+				v1->setMissionVehicleID(vehicle_id);
+				v1->setMissionStartingPoint(starting_point);
+				v1->setMissionEndPoint(end_point);
+				v1->setMissionDistance(distance);
+
+				listaMisji.push_back(v1);
+			}
+		}
+
+		fin.close();
+}
+
+void saveMissionList(){
+
+		ofstream fout;
+		fout.open("Misje.txt");
+
+		int employee_id, vehicle_id; string starting_point, end_point; double distance;
+
+		for(unsigned int i = 0; i < listaMisji.size(); i++){
+
+			listaMisji.at(i)->saveMissionEmployeeID(&employee_id);
+			listaMisji.at(i)->saveMissionVehicleID(&vehicle_id);
+			listaMisji.at(i)->saveMissionStartingPoint(&starting_point);
+			listaMisji.at(i)->saveMissionEndPoint(&end_point);
+			listaMisji.at(i)->saveMissionDistance(&distance);
+
+			fout << employee_id << " " << vehicle_id << " " << starting_point << " " << end_point << " " << distance << "\n";
+		}
+
+		fout.close();
+
+}
+
+void addMission(){
+
+	system("CLS");
+
+	Mission* v1 = new Mission();
+
+	string starting_point, end_point; double distance;
+
+	cout << "Podaj punkt poczatkowy: "; cin >> starting_point; v1->setMissionStartingPoint(starting_point);
+	cout << "Podaj punkt docelowy: "; cin >> end_point; v1->setMissionEndPoint(end_point);
+	v1->setMissionDistance(100);
+
+	listaMisji.push_back(v1);
+
+	system("CLS");
+}
+
 void exitProgram(){
 	saveVehicleList();
 	saveEmployeeList();
+	saveMissionList();
 	exit(1);
 }
 
