@@ -19,6 +19,7 @@
 #include "employeePersonalMenu.h"
 #include "vehicleInfoMenu.h"
 #include "currentMissions.h"
+#include "missionInfoMenu.h"
 
 
 using namespace std;
@@ -35,13 +36,12 @@ vector <Mission*> listaMisji;
 //created with program start
 vector <Vehicle*> wolnePojazdy;
 vector <Vehicle*> uzywanePojazdy;
-
 vector <Employee*> wolniPracownicy;
 vector <Employee*> zajeciPracownicy;
 
 
 
-int main(){
+int main() {
 
 	loadVehicleList();
 	loadEmployeeList();
@@ -49,6 +49,8 @@ int main(){
 	categorizeVehicles();
 
 	startmenu();
+
+	system("Pause");
 
 	return 0;
 }

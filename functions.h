@@ -184,15 +184,15 @@ void categorizeVehicles(){
 
 		bool isTaken;
 
+		int id, type; string brand, model, engine, equipment;
+
 		for(unsigned int i=0; i<listaPojazdow.size(); i++){
 
 			listaPojazdow.at(i)->saveVehicleIsTaken(&isTaken);
 
 			if(isTaken==0){
 
-				Vehicle* v2 = new Vehicle();
-
-				int id, type; string brand, model, engine, equipment;
+				Vehicle* v2 = new Vehicle(isTaken);
 
 				v2->setVehicleIsTaken(0);
 
@@ -200,7 +200,7 @@ void categorizeVehicles(){
 				v2->setVehicleID(id);
 
 				listaPojazdow.at(i)->saveVehicleType(&type);
-				v2->setVehicleID(type);
+				v2->setVehicleType(type);
 
 				listaPojazdow.at(i)->saveVehicleBrand(&brand);
 				v2->setVehicleBrand(brand);
@@ -219,9 +219,7 @@ void categorizeVehicles(){
 
 			else {
 
-				Vehicle* v2 = new Vehicle();
-
-				int id, type; string brand, model, engine, equipment;
+				Vehicle* v2 = new Vehicle(isTaken);
 
 				v2->setVehicleIsTaken(1);
 
@@ -229,7 +227,7 @@ void categorizeVehicles(){
 				v2->setVehicleID(id);
 
 				listaPojazdow.at(i)->saveVehicleType(&type);
-				v2->setVehicleID(type);
+				v2->setVehicleType(type);
 
 				listaPojazdow.at(i)->saveVehicleBrand(&brand);
 				v2->setVehicleBrand(brand);
@@ -247,6 +245,7 @@ void categorizeVehicles(){
 			}
 		}
 }
+
 
 void loadMissionList(){
 

@@ -8,6 +8,7 @@ using namespace std;
 extern vector <Mission*> listaMisji;
 
 extern void missionmenu();
+extern void missionInfoMenu(int);
 
 void currentMissions(){
 
@@ -35,7 +36,7 @@ void currentMissions(){
 
 	if (mission_choice == 0) {system("CLS"); missionmenu();}
 
-	else {cout << "chuj ci w dupe"; system("Pause");}
+	else {missionInfoMenu(mission_choice-1);}
 }
 
 

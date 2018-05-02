@@ -14,6 +14,7 @@ class Vehicle{
 	public:
 		Vehicle();
 		Vehicle(int);
+		Vehicle(bool);
 		Vehicle(int, bool);
 
 		//setters
@@ -148,6 +149,8 @@ void Vehicle::saveVehicleEquipment(string* equipment){
 Vehicle::Vehicle(){
 	vehiclesCount++;
 }
+
+Vehicle::Vehicle(bool isTaken){} //for categorizeVehicles() - it shouldn't increment count
 
 
 Vehicle::Vehicle(int id){
