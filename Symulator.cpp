@@ -51,6 +51,7 @@ int main() {
 	loadEmployeeList();
 	loadMissionList();
 	categorizeVehicles();
+	categorizeEmployees();
 
 	startmenu();
 

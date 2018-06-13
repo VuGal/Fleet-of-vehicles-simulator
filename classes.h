@@ -182,6 +182,7 @@ class Employee{
 	public:
 		Employee();
 		Employee(int);
+		Employee(bool);
 		Employee(int, bool);
 
 		//setters
@@ -286,6 +287,8 @@ Employee::Employee(){
 	employeesCount++;
 }
 
+
+Employee::Employee(bool isTaken){} //for categorizeEmployees() - it shouldn't increment count
 
 Employee::Employee(int id){
 	id_ = id;

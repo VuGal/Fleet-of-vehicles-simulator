@@ -58,20 +58,16 @@ int employeeList(int is_int){
 
 	system("CLS");
 
-	string employee_choice_string; int employee_choice, count=1; bool isBusy;
+	string employee_choice_string; int employee_choice, count=1;
 
-	for(unsigned int i=0; i<listaPracownikow.size(); i++){
+	for(unsigned int i=0; i<wolniPracownicy.size(); i++){
 
-		listaPracownikow.at(i)->saveEmployeeIsBusy(&isBusy);
-
-		if(isBusy==0){
 			cout << count << ". ";
-			listaPracownikow.at(i)->getEmployeeName();
+			wolniPracownicy.at(i)->getEmployeeName();
 			cout << " ";
-			listaPracownikow.at(i)->getEmployeeSurname();
+			wolniPracownicy.at(i)->getEmployeeSurname();
 			count++;
 			cout << "\n\n";
-		}
 
 	}
 
@@ -92,8 +88,28 @@ int employeeList(int is_int){
 		if(employee_choice < count && employee_choice > 0){
 
 			poprawna = true;
+
+			int id_acquired; string name_acquired, surname_acquired; double salary_acquired;
+
+			wolniPracownicy.at(employee_choice-1)->saveEmployeeID(&id_acquired);
+			wolniPracownicy.at(employee_choice-1)->saveEmployeeName(&name_acquired);
+			wolniPracownicy.at(employee_choice-1)->saveEmployeeSurname(&surname_acquired);
+			wolniPracownicy.at(employee_choice-1)->saveEmployeeSalary(&salary_acquired);
+
+			wolniPracownicy.erase(wolniPracownicy.begin()+employee_choice-1);
+
+			Employee* v3 = new Employee();
+
+			v3->setEmployeeID(id_acquired);
+			v3->setEmployeeIsBusy(1);
+			v3->setEmployeeName(name_acquired);
+			v3->setEmployeeSurname(surname_acquired);
+			v3->setEmployeeSalary(salary_acquired);
+
+			zajeciPracownicy.push_back(v3);
+
 			system("CLS");
-			return(employee_choice);
+			return(id_acquired);
 
 		}
 

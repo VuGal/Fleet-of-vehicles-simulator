@@ -18,15 +18,15 @@ void currentMissions(){
 
 	for(unsigned int i=0; i<listaMisji.size(); i++){
 		cout << i+1 << ". ";
-		listaMisji.at(i)->getMissionEmployeeID();
+		/*listaMisji.at(i)->getMissionEmployeeID();
 		cout << " ";
 		listaMisji.at(i)->getMissionVehicleID();
-		cout << " ";
+		cout << " ";*/
 		listaMisji.at(i)->getMissionStartingPoint();
-		cout << " ";
+		cout << " - ";
 		listaMisji.at(i)->getMissionEndPoint();
-		cout << " ";
-		listaMisji.at(i)->getMissionDistance();
+		//cout << " ";
+		//listaMisji.at(i)->getMissionDistance();
 		cout << "\n\n";
 		count++;
 	}

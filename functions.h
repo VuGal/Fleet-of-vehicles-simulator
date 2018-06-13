@@ -250,6 +250,60 @@ void categorizeVehicles(){
 		}
 }
 
+void categorizeEmployees(){
+
+		bool isBusy;
+
+		int id; string name, surname; double salary;
+
+		for(unsigned int i=0; i<listaPracownikow.size(); i++){
+
+			listaPracownikow.at(i)->saveEmployeeIsBusy(&isBusy);
+
+			if(isBusy==0){
+
+				Employee* v2 = new Employee(isBusy);
+
+				v2->setEmployeeIsBusy(0);
+
+				listaPracownikow.at(i)->saveEmployeeID(&id);
+				v2->setEmployeeID(id);
+
+				listaPracownikow.at(i)->saveEmployeeName(&name);
+				v2->setEmployeeName(name);
+
+				listaPracownikow.at(i)->saveEmployeeSurname(&surname);
+				v2->setEmployeeSurname(surname);
+
+				listaPracownikow.at(i)->saveEmployeeSalary(&salary);
+				v2->setEmployeeSalary(salary);
+
+				wolniPracownicy.push_back(v2);
+			}
+
+			else {
+
+				Employee* v2 = new Employee(isBusy);
+
+				v2->setEmployeeIsBusy(1);
+
+				listaPracownikow.at(i)->saveEmployeeID(&id);
+				v2->setEmployeeID(id);
+
+				listaPracownikow.at(i)->saveEmployeeName(&name);
+				v2->setEmployeeName(name);
+
+				listaPracownikow.at(i)->saveEmployeeSurname(&surname);
+				v2->setEmployeeSurname(surname);
+
+				listaPracownikow.at(i)->saveEmployeeSalary(&salary);
+				v2->setEmployeeSalary(salary);
+
+				zajeciPracownicy.push_back(v2);
+			}
+		}
+}
+
 
 void loadMissionList(){
 
@@ -338,7 +392,8 @@ void addMission(){
 
 	cout << "\nPodaj punkt poczatkowy: "; cin >> starting_point; v1->setMissionStartingPoint(starting_point);
 	cout << "Podaj punkt docelowy: "; cin >> end_point; v1->setMissionEndPoint(end_point);
-	v1->setMissionDistance(100);
+
+	v1->setMissionDistance(rand()%550);
 
 
 	listaMisji.push_back(v1);

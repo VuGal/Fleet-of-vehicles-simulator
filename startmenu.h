@@ -39,7 +39,10 @@ void startmenu(){
 		case '2':
 		{poprawna = true;
 		system("CLS");
-		cout << "Projekt symuluje dzialanie systemu kontrolujacego flote pojazdow.\n\nNacisnij dowolny klawisz, aby powrocic do menu glownego.";
+		cout << "Projekt symuluje dzialanie systemu kontrolujacego flote pojazdow.\n\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
+		cout <<"Nacisnij dowolny klawisz, aby powrocic do menu glownego.";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 		getch();
 		system("CLS");
 		startmenu();
