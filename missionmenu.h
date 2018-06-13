@@ -24,24 +24,21 @@ void missionmenu(){
 
 	cout << "Wybierz opcje: ";
 
-	int choice;
-
-	cin >> choice;
-	cout << "\n";
+	char choice;
 
 		bool poprawna = false;
 
 		while(poprawna == false){
 
+			choice = getch();
+
 			switch (choice){
 
-			case 1: {poprawna = true; system("CLS"); currentMissions(); break;}
+			case '1': {poprawna = true; system("CLS"); currentMissions(); break;}
 
-			case 2: {poprawna = true; system("CLS"); addMission(); break;}
+			case '2': {poprawna = true; system("CLS"); addMission(); missionmenu(); break;}
 
-			case 3: {poprawna = true; system("CLS"); mainmenu(); break;}
-
-			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> choice; cout << "\n";}
+			case '3': {poprawna = true; system("CLS"); mainmenu(); break;}
 			}
 		}
 }

@@ -11,7 +11,7 @@ extern void exitProgram();
 void startmenu(){
 
 	cout << "-------------------------------------------------------------------------------\n";
-	cout << "-------------------    SYMULATOR FLOTY POJAZDOW v. 0.5      -------------------\n";
+	cout << "-------------------    SYMULATOR FLOTY POJAZDOW v. 0.6      -------------------\n";
 	cout << "-------------------------------------------------------------------------------\n";
 	cout << "-------------------------------------------------------------------------------\n";
 	cout << "--------    Autorzy: Galecki Wojciech, Lis Monika, Przybylo Wojciech    -------\n";
@@ -24,20 +24,19 @@ void startmenu(){
 
 	cout << "Wybierz opcje: ";
 
-	int start_menu_choice;
-
-	cin >> start_menu_choice;
-	cout << "\n";
+	char start_menu_choice;
 
 	bool poprawna = false;
 
 	while(poprawna == false){
 
+		start_menu_choice = getch();
+
 		switch (start_menu_choice){
 
-		case 1: {poprawna = true; system("CLS"); mainmenu(); break;}
+		case '1': {poprawna = true; system("CLS"); mainmenu(); break;}
 
-		case 2:
+		case '2':
 		{poprawna = true;
 		system("CLS");
 		cout << "Projekt symuluje dzialanie systemu kontrolujacego flote pojazdow.\n\nNacisnij dowolny klawisz, aby powrocic do menu glownego.";
@@ -46,9 +45,7 @@ void startmenu(){
 		startmenu();
 		break;}
 
-		case 3: {exitProgram(); break;}
-
-		default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> start_menu_choice; cout << "\n";}
+		case '3': {exitProgram(); break;}
 		}
 	}
 }

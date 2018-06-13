@@ -33,18 +33,17 @@ void vehicleInfoMenu(int vehicle_choice, int from_which_menu){
 
 		cout << "0. Powrot";
 
-		int choice;
-
-		cin >> choice;
-		cout << "\n";
+		char choice;
 
 		bool poprawna = false;
 
 		while(poprawna == false){
 
+			choice = getch();
+
 			switch (choice){
 
-			case 1: {
+			case '1': {
 
 				poprawna = true;
 
@@ -72,9 +71,7 @@ void vehicleInfoMenu(int vehicle_choice, int from_which_menu){
 				missionInfoMenu(mission_choice_remote, 1, function_employee_id_remote-1, function_vehicle_id_remote-1);
 				break; }
 
-			case 0: {poprawna = true; system("CLS"); takenVehicles(); break;}
-
-			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> choice; cout << "\n";}
+			case '0': {poprawna = true; system("CLS"); takenVehicles(); break;}
 				}
 			}
 		}
@@ -91,20 +88,18 @@ void vehicleInfoMenu(int vehicle_choice, int from_which_menu){
 
 		cout << "0. Powrot\n\n";
 
-		int choice;
+		char choice;
 
-		cin >> choice;
-		cout << "\n";
 
 		bool poprawna = false;
 
 		while(poprawna == false){
 
+			choice = getch();
+
 			switch (choice){
 
-			case 0: {poprawna = true; system("CLS"); availableVehicles(); break;}
-
-			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> choice; cout << "\n";}
+			case '0': {poprawna = true; system("CLS"); availableVehicles(); break;}
 			}
 		}
 	}

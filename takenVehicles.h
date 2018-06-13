@@ -26,12 +26,11 @@ void takenVehicles(){
 		}
 	}
 
-	cout << "\n\n\n\nWybierz samochod (0 - powrot) : ";
+	cout << "\n\n\n\nWybierz samochod i nacisnij ENTER (0 - powrot) : ";
 	cin >> vehicle_choice;
 
 	if(vehicle_choice == 0) {system("CLS"); vehiclemenu();}
 	else{vehicleInfoMenu(vehicle_choice-1, 1);}
-
 
 };
 

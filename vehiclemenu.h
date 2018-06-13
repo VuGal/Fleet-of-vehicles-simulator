@@ -23,26 +23,23 @@ void vehiclemenu(){
 
 	cout << "Wybierz opcje: ";
 
-	int vehicle_menu_choice;
-
-	cin >> vehicle_menu_choice;
-	cout << "\n";
+	char vehicle_menu_choice;
 
 		bool poprawna = false;
 
 		while(poprawna == false){
 
+			vehicle_menu_choice = getch();
+
 			switch (vehicle_menu_choice){
 
-			case 1: {poprawna = true; system("CLS"); takenVehicles(); break;}
+			case '1': {poprawna = true; system("CLS"); takenVehicles(); break;}
 
-			case 2: {poprawna = true; system("CLS"); availableVehicles(); break;}
+			case '2': {poprawna = true; system("CLS"); availableVehicles(); break;}
 
-			case 3: {addVehicle(); vehiclemenu(); break;}
+			case '3': {addVehicle(); vehiclemenu(); break;}
 
-			case 4: {poprawna = true; system("CLS"); mainmenu(); break;}
-
-			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> vehicle_menu_choice; cout << "\n";}
+			case '4': {poprawna = true; system("CLS"); mainmenu(); break;}
 			}
 		}
 }

@@ -5,6 +5,8 @@
 #include <fstream>
 #include <iterator>
 #include <algorithm>
+#include <windows.h>
+#include <time.h>
 
 #include "functions.h"
 #include "classes.h"
@@ -42,6 +44,8 @@ vector <Employee*> zajeciPracownicy;
 
 
 int main() {
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
 	loadVehicleList();
 	loadEmployeeList();

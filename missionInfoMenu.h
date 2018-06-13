@@ -2,6 +2,8 @@
 #define MISSIONINFOMENU_H_
 
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -44,26 +46,38 @@ void missionInfoMenu(int mission_choice){
 	listaMisji.at(mission_choice)->getMissionStartingPoint();
 	cout << "\nDo: ";
 	listaMisji.at(mission_choice)->getMissionEndPoint();
+
+
+	int speed = rand()%200;
+
+	cout << "\n\nAktualna predkosc: ";
+
+	if (speed<50) {SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);}
+	else if (speed>50 && speed<90) {SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);}
+	else {SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);}
+
+	cout << speed << " km/h";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
+
 	cout << "\n\n\nOdleglosc: ";
 	listaMisji.at(mission_choice)->getMissionDistance();
+	cout << " km";
 
 
 	cout << "\n\n0. Powrot";
 
-	int choice;
-
-	cin >> choice;
-	cout << "\n";
+	char choice;
 
 	bool poprawna = false;
 
 	while(poprawna == false){
 
+		choice = getch();
+
 		switch (choice){
 
-			case 0: {poprawna = true; system("CLS"); currentMissions(); break;}
-
-			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> choice; cout << "\n";}
+			case '0': {poprawna = true; system("CLS"); currentMissions(); break;}
 		}
 	}
 }
@@ -92,24 +106,37 @@ void missionInfoMenu(int mission_choice, int from_which_menu, int function_emplo
 	listaMisji.at(mission_choice)->getMissionStartingPoint();
 	cout << "\nDo: ";
 	listaMisji.at(mission_choice)->getMissionEndPoint();
+
+
+	int speed = rand()%200;
+
+	cout << "\n\nAktualna predkosc: ";
+
+	if (speed<50) {SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);}
+	else if (speed>50 && speed<90) {SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);}
+	else {SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);}
+
+	cout << speed << " km/h";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+
 	cout << "\n\n\nOdleglosc: ";
 	listaMisji.at(mission_choice)->getMissionDistance();
+	cout << " km";
 
 
 	cout << "\n\n0. Powrot";
 
-	int choice;
-
-	cin >> choice;
-	cout << "\n";
+	char choice;
 
 	bool poprawna = false;
 
 	while(poprawna == false){
 
+		choice = getch();
+
 		switch (choice){
 
-		case 0: {
+		case '0': {
 
 			if(from_which_menu==1){
 
@@ -135,7 +162,6 @@ void missionInfoMenu(int mission_choice, int from_which_menu, int function_emplo
 
 			else {poprawna = true; system("CLS"); employeePersonalMenu(function_employee_id); break;}
 		}
-		default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> choice; cout << "\n";}
 
 		}
 	}

@@ -31,7 +31,7 @@ void currentMissions(){
 
 	}
 
-	cout << "\n\n\n\nWybierz misje (0 - powrot) : ";
+	cout << "\n\n\n\nWybierz misje i nacisnij ENTER (0 - powrot) : ";
 	cin >> mission_choice;
 
 	if (mission_choice == 0) {system("CLS"); missionmenu();}

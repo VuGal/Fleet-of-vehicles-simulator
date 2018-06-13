@@ -36,20 +36,17 @@ void employeePersonalMenu(int employee_choice){
 
 	cout << "1. Powrot\n\n";
 
-	int choice;
-
-	cin >> choice;
-		cout << "\n";
+	char choice;
 
 			bool poprawna = false;
 
 			while(poprawna == false){
 
+				choice = getch();
+
 				switch (choice){
 
-				case 1: {poprawna = true; system("CLS"); employeeList(); break;}
-
-				default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> choice; cout << "\n";}
+				case '1': {poprawna = true; system("CLS"); employeeList(); break;}
 				}
 			}
 	}
@@ -74,18 +71,17 @@ void employeePersonalMenu(int employee_choice){
 	cout << "1. Wyswietl dane aktualnej misji\n\n";
 	cout << "2. Powrot";
 
-	int choice;
-
-	cin >> choice;
-		cout << "\n";
+	char choice;
 
 			bool poprawna = false;
 
 			while(poprawna == false){
 
+				choice = getch();
+
 				switch (choice){
 
-				case 1: {
+				case '1': {
 					poprawna = true;
 
 					int mission_choice_remote;
@@ -114,9 +110,7 @@ void employeePersonalMenu(int employee_choice){
 				}
 
 
-				case 2: {poprawna = true; system("CLS"); employeeList(); break;}
-
-				default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> choice; cout << "\n";}
+				case '2': {poprawna = true; system("CLS"); employeeList(); break;}
 				}
 			}
 	}

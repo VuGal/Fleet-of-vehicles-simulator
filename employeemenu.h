@@ -25,24 +25,21 @@ void employeemenu(){
 
 	cout << "Wybierz opcje: ";
 
-	int employee_menu_choice;
-
-	cin >> employee_menu_choice;
-	cout << "\n";
+	char employee_menu_choice;
 
 		bool poprawna = false;
 
 		while(poprawna == false){
 
+			employee_menu_choice = getch();
+
 			switch (employee_menu_choice){
 
-			case 1: {poprawna = true; employeeList(); break;}
+			case '1': {poprawna = true; employeeList(); break;}
 
-			case 2: {poprawna = true; addEmployee(); employeemenu(); break;}
+			case '2': {poprawna = true; addEmployee(); employeemenu(); break;}
 
-			case 3: {poprawna = true; system("CLS"); mainmenu(); break;}
-
-			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> employee_menu_choice; cout << "\n";}
+			case '3': {poprawna = true; system("CLS"); mainmenu(); break;}
 			}
 		}
 }

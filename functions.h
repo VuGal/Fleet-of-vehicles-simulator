@@ -24,6 +24,10 @@ extern vector <Vehicle*> uzywanePojazdy;
 extern vector <Employee*> wolniPracownicy;
 extern vector <Employee*> zajeciPracownicy;
 
+extern void employeeList();
+extern int employeeList(int);
+extern int availableVehicles(int);
+
 void loadVehicleList(){
 
 	bool isEmpty;
@@ -311,9 +315,31 @@ void addMission(){
 
 	string starting_point, end_point; double distance;
 
-	cout << "Podaj punkt poczatkowy: "; cin >> starting_point; v1->setMissionStartingPoint(starting_point);
+
+	cout << "Wybierz pracownika: ";
+
+	int employee_choice_remote;
+
+	employee_choice_remote = employeeList(1);
+
+	v1->setMissionEmployeeID(employee_choice_remote);
+
+
+
+	cout << "Wybierz pojazd: ";
+
+	int vehicle_choice_remote;
+
+	vehicle_choice_remote = availableVehicles(1);
+
+	v1->setMissionVehicleID(vehicle_choice_remote);
+
+
+
+	cout << "\nPodaj punkt poczatkowy: "; cin >> starting_point; v1->setMissionStartingPoint(starting_point);
 	cout << "Podaj punkt docelowy: "; cin >> end_point; v1->setMissionEndPoint(end_point);
 	v1->setMissionDistance(100);
+
 
 	listaMisji.push_back(v1);
 

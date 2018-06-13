@@ -5,7 +5,7 @@
 #include <cstdlib>
 using namespace std;
 
-extern int main_menu_choice;
+extern char main_menu_choice;
 
 extern void startmenu();
 extern void vehiclemenu();
@@ -25,27 +25,23 @@ void mainmenu(){
 
 	cout << "Wybierz opcje: ";
 
-	int main_menu_choice;
-
-	cin >> main_menu_choice;
-
-	cout << "\n";
+	char main_menu_choice;
 
 		bool poprawna = false;
 
 		while(poprawna == false){
 
+			main_menu_choice = getch();
+
 			switch (main_menu_choice){
 
-			case 1: {poprawna = true; system("CLS"); vehiclemenu(); break;}
+			case '1': {poprawna = true; system("CLS"); vehiclemenu(); break;}
 
-			case 2: {poprawna = true; system("CLS"); employeemenu(); break;}
+			case '2': {poprawna = true; system("CLS"); employeemenu(); break;}
 
-			case 3: {poprawna = true; system("CLS"); missionmenu(); break;}
+			case '3': {poprawna = true; system("CLS"); missionmenu(); break;}
 
-			case 4: {poprawna = true; system("CLS"); startmenu(); break;}
-
-			default: {cout << "Wybrano niepoprawna opcje.\n\nWybierz opcje: "; cin >> main_menu_choice; cout << "\n";}
+			case '4': {poprawna = true; system("CLS"); startmenu(); break;}
 			}
 		}
 }

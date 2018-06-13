@@ -5,6 +5,8 @@
 
 using namespace std;
 
+extern int employee_choice_remote;
+
 extern vector <Employee*> listaPracownikow;
 
 extern void employeemenu();
@@ -25,7 +27,8 @@ void employeeList(){
 
 	}
 
-	cout << "\n\n\n\nWybierz pracownika (0 - powrot) : ";
+
+	cout << "\n\n\n\nWybierz pracownika i nacisnij ENTER (0 - powrot) : ";
 	cin >> employee_choice;
 
 	if (employee_choice == 0) {system("CLS"); employeemenu();}
@@ -33,6 +36,34 @@ void employeeList(){
 	else {employeePersonalMenu(employee_choice-1);}
 }
 
+int employeeList(int is_int){
 
+	system("CLS");
+
+	int employee_choice, count=1; bool isBusy;
+
+	for(unsigned int i=0; i<listaPracownikow.size(); i++){
+
+		listaPracownikow.at(i)->saveEmployeeIsBusy(&isBusy);
+
+		if(isBusy==0){
+			cout << count << ". ";
+			listaPracownikow.at(i)->getEmployeeName();
+			cout << " ";
+			listaPracownikow.at(i)->getEmployeeSurname();
+			count++;
+		}
+
+		cout << "\n\n";
+
+	}
+
+	cout << "\n\n\n\nWybierz pracownika: ";
+	cin >> employee_choice;
+
+	system("CLS");
+
+	return(employee_choice);
+}
 
 #endif /* EMPLOYEELIST_H_ */
