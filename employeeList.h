@@ -16,7 +16,7 @@ void employeeList(){
 
 	system("CLS");
 
-	int employee_choice;
+	int count = 1;
 
 	for(unsigned int i=0; i<listaPracownikow.size(); i++){
 		cout << i+1 << ". ";
@@ -24,12 +24,30 @@ void employeeList(){
 		cout << " ";
 		listaPracownikow.at(i)->getEmployeeSurname();
 		cout << "\n\n";
-
+		count++;
 	}
 
 
 	cout << "\n\n\n\nWybierz pracownika i nacisnij ENTER (0 - powrot) : ";
-	cin >> employee_choice;
+
+	string employee_choice_string; int employee_choice; bool poprawna = false;
+
+	while(poprawna == false){
+
+			cin >> employee_choice_string;
+
+			try {
+			employee_choice = stoi(employee_choice_string);
+			}
+
+			catch(invalid_argument iaex) {cout << "\n\nNiepoprawny wybor. Wybierz pracownika (0 - powrot) : "; continue;}
+
+			if(employee_choice < count && employee_choice > -1){
+				poprawna = true;
+			}
+
+			else {cout << "\n\nNiepoprawny wybor. Wybierz pracownika (0 - powrot) : "; continue;}
+		}
 
 	if (employee_choice == 0) {system("CLS"); employeemenu();}
 
@@ -40,7 +58,7 @@ int employeeList(int is_int){
 
 	system("CLS");
 
-	int employee_choice, count=1; bool isBusy;
+	string employee_choice_string; int employee_choice, count=1; bool isBusy;
 
 	for(unsigned int i=0; i<listaPracownikow.size(); i++){
 
@@ -52,18 +70,35 @@ int employeeList(int is_int){
 			cout << " ";
 			listaPracownikow.at(i)->getEmployeeSurname();
 			count++;
+			cout << "\n\n";
 		}
-
-		cout << "\n\n";
 
 	}
 
+	bool poprawna = false;
+
 	cout << "\n\n\n\nWybierz pracownika: ";
-	cin >> employee_choice;
 
-	system("CLS");
+	while(poprawna == false){
 
-	return(employee_choice);
+		cin >> employee_choice_string;
+
+		try {
+		employee_choice = stoi(employee_choice_string);
+		}
+
+		catch(invalid_argument iaex) {cout << "\n\nNiepoprawny wybor. Wybierz pracownika: "; continue;}
+
+		if(employee_choice < count && employee_choice > 0){
+
+			poprawna = true;
+			system("CLS");
+			return(employee_choice);
+
+		}
+
+		else {cout << "\n\nNiepoprawny wybor. Wybierz pracownika: "; continue;}
+	}
 }
 
 #endif /* EMPLOYEELIST_H_ */

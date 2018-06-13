@@ -14,7 +14,7 @@ void takenVehicles(){
 
 	system("CLS");
 
-	int vehicle_choice;
+	int count = 1;
 
 	for(unsigned int i=0; i<uzywanePojazdy.size(); i++){
 {
@@ -23,11 +23,31 @@ void takenVehicles(){
 			cout << " ";
 			uzywanePojazdy.at(i)->getVehicleModel();
 			cout << "\n";
+			count++;
 		}
 	}
 
 	cout << "\n\n\n\nWybierz samochod i nacisnij ENTER (0 - powrot) : ";
-	cin >> vehicle_choice;
+
+	string vehicle_choice_string; int vehicle_choice; bool poprawna = false;
+
+			while(poprawna == false){
+
+					cin >> vehicle_choice_string;
+
+					try {
+					vehicle_choice = stoi(vehicle_choice_string);
+					}
+
+					catch(invalid_argument iaex) {cout << "\n\nNiepoprawny wybor. Wybierz samochod (0 - powrot) : "; continue;}
+
+					if(vehicle_choice < count && vehicle_choice > -1){
+						poprawna = true;
+					}
+
+					else {cout << "\n\nNiepoprawny wybor. Wybierz samochod (0 - powrot) : "; continue;}
+				}
+
 
 	if(vehicle_choice == 0) {system("CLS"); vehiclemenu();}
 	else{vehicleInfoMenu(vehicle_choice-1, 1);}

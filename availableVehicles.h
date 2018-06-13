@@ -14,7 +14,7 @@ void availableVehicles(){
 
 	system("CLS");
 
-	int vehicle_choice;
+	int count = 1;
 
 	for(unsigned int i=0; i<wolnePojazdy.size(); i++){
 		{
@@ -23,11 +23,30 @@ void availableVehicles(){
 			cout << " ";
 			wolnePojazdy.at(i)->getVehicleModel();
 			cout << "\n";
+			count++;
 		}
 	}
 
 	cout << "\n\n\n\nWybierz samochod i nacisnij ENTER (0 - powrot) : ";
-	cin >> vehicle_choice;
+
+	string vehicle_choice_string; int vehicle_choice; bool poprawna = false;
+
+		while(poprawna == false){
+
+				cin >> vehicle_choice_string;
+
+				try {
+				vehicle_choice = stoi(vehicle_choice_string);
+				}
+
+				catch(invalid_argument iaex) {cout << "\n\nNiepoprawny wybor. Wybierz samochod (0 - powrot) : "; continue;}
+
+				if(vehicle_choice < count && vehicle_choice > -1){
+					poprawna = true;
+				}
+
+				else {cout << "\n\nNiepoprawny wybor. Wybierz samochod (0 - powrot) : "; continue;}
+			}
 
 	if(vehicle_choice == 0) {system("CLS"); vehiclemenu();}
 	else{vehicleInfoMenu(vehicle_choice-1, 2);}
@@ -38,7 +57,7 @@ int availableVehicles(int is_int){
 
 	system("CLS");
 
-	int vehicle_choice;
+	int count = 1;
 
 	for(unsigned int i=0; i<wolnePojazdy.size(); i++){
 		{
@@ -47,11 +66,30 @@ int availableVehicles(int is_int){
 			cout << " ";
 			wolnePojazdy.at(i)->getVehicleModel();
 			cout << "\n";
+			count++;
 		}
 	}
 
 	cout << "\n\n\n\nWybierz samochod: ";
-	cin >> vehicle_choice;
+
+	string vehicle_choice_string; int vehicle_choice; bool poprawna = false;
+
+			while(poprawna == false){
+
+					cin >> vehicle_choice_string;
+
+					try {
+					vehicle_choice = stoi(vehicle_choice_string);
+					}
+
+					catch(invalid_argument iaex) {cout << "\n\nNiepoprawny wybor. Wybierz pracownika: "; continue;}
+
+					if(vehicle_choice < count && vehicle_choice > -1){
+						poprawna = true;
+					}
+
+					else {cout << "\n\nNiepoprawny wybor. Wybierz pracownika: "; continue;}
+				}
 
 	int id_acquired;
 	string brand_acquired, model_acquired, engine_acquired, equipment_acquired;
