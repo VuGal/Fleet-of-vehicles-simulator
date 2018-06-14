@@ -10,6 +10,8 @@ extern vector <Vehicle*> wolnePojazdy;
 
 extern void vehicleInfoMenu(int, int);
 
+extern int vehiclesCount;
+
 void availableVehicles(){
 
 	system("CLS");
@@ -82,13 +84,13 @@ int availableVehicles(int is_int){
 					vehicle_choice = stoi(vehicle_choice_string);
 					}
 
-					catch(invalid_argument iaex) {cout << "\n\nNiepoprawny wybor. Wybierz pracownika: "; continue;}
+					catch(invalid_argument iaex) {cout << "\n\nNiepoprawny wybor. Wybierz samochod: "; continue;}
 
-					if(vehicle_choice < count && vehicle_choice > -1){
+					if(vehicle_choice < count && vehicle_choice > 0){
 						poprawna = true;
 					}
 
-					else {cout << "\n\nNiepoprawny wybor. Wybierz pracownika: "; continue;}
+					else {cout << "\n\nNiepoprawny wybor. Wybierz samochod: "; continue;}
 				}
 
 	int id_acquired;
@@ -102,6 +104,20 @@ int availableVehicles(int is_int){
 
 	wolnePojazdy.erase(wolnePojazdy.begin()+vehicle_choice-1);
 
+	for(unsigned int j=0; j<listaPojazdow.size(); j++)
+				{
+					int id_acquired_2;
+
+					listaPojazdow.at(j)->saveVehicleID(&id_acquired_2);
+
+					if (id_acquired == id_acquired_2){
+
+						listaPojazdow.erase(listaPojazdow.begin()+j);
+						vehiclesCount--;
+
+					}
+				}
+
 	Vehicle* v3 = new Vehicle();
 
 	v3->setVehicleID(id_acquired);
@@ -111,6 +127,7 @@ int availableVehicles(int is_int){
 	v3->setVehicleEquipment(equipment_acquired);
 
 	uzywanePojazdy.push_back(v3);
+	listaPojazdow.push_back(v3);
 
 	system("CLS");
 

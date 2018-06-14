@@ -25,6 +25,7 @@ extern vector <Employee*> wolniPracownicy;
 extern vector <Employee*> zajeciPracownicy;
 
 extern void employeeList();
+extern void missionmenu();
 extern int employeeList(int);
 extern int availableVehicles(int);
 
@@ -107,6 +108,7 @@ void addVehicle(){
 	cout << "Podaj wyposazenie pojazdu: "; cin >> equipment; v1->setVehicleEquipment(equipment);
 
 	listaPojazdow.push_back(v1);
+	wolnePojazdy.push_back(v1);
 
 	system("CLS");
 }
@@ -180,6 +182,7 @@ void addEmployee(){
 	cout << "Podaj nazwisko pracownika: "; cin >> surname; v1->setEmployeeSurname(surname);
 	cout << "Podaj zarobki pracownika: "; cin >> salary; v1->setEmployeeSalary(salary);
 	listaPracownikow.push_back(v1);
+	wolniPracownicy.push_back(v1);
 
 	system("CLS");
 }
@@ -367,7 +370,21 @@ void addMission(){
 
 	Mission* v1 = new Mission();
 
-	string starting_point, end_point; double distance;
+	string starting_point, end_point;
+
+	if(wolniPracownicy.size() == 0) {
+		cout << "Nie ma dostepnych zadnych pracownikow do wykonania misji.\n\nNacisnij dowolny klawisz, aby kontynuowac.";
+		getch();
+		system("CLS");
+		missionmenu();
+	}
+
+	if(wolnePojazdy.size() == 0) {
+			cout << "Nie ma dostepnych zadnych pojazdow do wykonania misji.\n\nNacisnij dowolny klawisz, aby kontynuowac.";
+			getch();
+			system("CLS");
+			missionmenu();
+		}
 
 
 	cout << "Wybierz pracownika: ";
@@ -377,7 +394,6 @@ void addMission(){
 	employee_choice_remote = employeeList(1);
 
 	v1->setMissionEmployeeID(employee_choice_remote);
-
 
 
 	cout << "Wybierz pojazd: ";

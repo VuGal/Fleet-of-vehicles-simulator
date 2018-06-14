@@ -6,6 +6,7 @@
 using namespace std;
 
 extern int employee_choice_remote;
+extern int employeesCount;
 
 extern vector <Employee*> listaPracownikow;
 
@@ -96,7 +97,20 @@ int employeeList(int is_int){
 			wolniPracownicy.at(employee_choice-1)->saveEmployeeSurname(&surname_acquired);
 			wolniPracownicy.at(employee_choice-1)->saveEmployeeSalary(&salary_acquired);
 
-			wolniPracownicy.erase(wolniPracownicy.begin()+employee_choice-1);
+			wolniPracownicy.erase(wolniPracownicy.begin()+(employee_choice-1));
+
+			for(unsigned int j=0; j<listaPracownikow.size(); j++)
+			{
+				int id_acquired_2;
+
+				listaPracownikow.at(j)->saveEmployeeID(&id_acquired_2);
+
+				if (id_acquired == id_acquired_2){
+					listaPracownikow.erase(listaPracownikow.begin()+j);
+					employeesCount--;
+				}
+			}
+
 
 			Employee* v3 = new Employee();
 
@@ -107,6 +121,7 @@ int employeeList(int is_int){
 			v3->setEmployeeSalary(salary_acquired);
 
 			zajeciPracownicy.push_back(v3);
+			listaPracownikow.push_back(v3);
 
 			system("CLS");
 			return(id_acquired);
