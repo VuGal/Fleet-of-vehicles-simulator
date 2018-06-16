@@ -37,7 +37,9 @@ void employeePersonalMenu(int employee_choice){
 
 	cout << "\n\n\n\n";
 
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED| FOREGROUND_INTENSITY);
 	cout << "1. Powrot\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
 	char choice;
 
@@ -74,7 +76,9 @@ void employeePersonalMenu(int employee_choice){
 	cout << "\n\n\n\n";
 
 	cout << "1. Wyswietl dane aktualnej misji\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED| FOREGROUND_INTENSITY);
 	cout << "2. Powrot";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
 	char choice;
 

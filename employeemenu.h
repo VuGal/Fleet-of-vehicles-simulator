@@ -15,13 +15,15 @@ void employeemenu(){
 	cout << "=========== ZARZADZANIE PRACOWNIKAMI ===========\n";
 	cout << "================================================\n\n";
 
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "               1. Lista pracownikow\n\n\n\n\n\n";
 
-
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED| FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "               2. Dodaj pracownika\n\n\n\n\n\n";
 
-
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
 	cout << "               3. Powrot\n\n\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
 	cout << "Wybierz opcje: ";
 

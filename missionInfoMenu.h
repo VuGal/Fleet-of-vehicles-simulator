@@ -148,8 +148,9 @@ void missionInfoMenu(int mission_choice, int from_which_menu, int function_emplo
 	listaMisji.at(mission_choice)->getMissionDistance();
 	cout << " km";
 
-
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
 	cout << "\n\n0. Powrot";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
 	char choice;
 

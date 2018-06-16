@@ -16,12 +16,15 @@ void missionmenu(){
 	cout << "==================  MENU MISJI  ================\n";
 	cout << "================================================\n\n";
 
-	cout << "                   1. Obecne misje\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+	cout << "                   1. Obecne misje\n\n\n\n";
 
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED| FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "                   2. Dodaj misje\n\n\n\n\n\n";
 
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED| FOREGROUND_INTENSITY);
 	cout << "                   3. Powrot\n\n\n\n";
-
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "Wybierz opcje: ";
 
 	char choice;

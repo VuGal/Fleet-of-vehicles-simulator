@@ -18,11 +18,17 @@ void mainmenu(){
 	cout << "============ PANEL ZARZADZANIA FLOTA ===========\n";
 	cout << "================================================\n\n";
 
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "               1. POJAZDY\n\n";
 	cout << "               2. PRACOWNICY\n\n\n\n";
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
 	cout << "               3. MISJE\n\n\n\n\n\n";
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
 	cout << "               4. Powrot\n\n\n\n";
 
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "Wybierz opcje: ";
 
 	char main_menu_choice;

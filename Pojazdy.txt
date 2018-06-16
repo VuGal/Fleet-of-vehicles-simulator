@@ -2,3 +2,7 @@
 3 1 1 Chevrolet Camaro 3.8 Cabrio
 4 1 2 Peugeot Boxer 2.5 Hak
 2 0 1 Peugeot 308 1.6 ESP
+5 0 1 Renault Megane 1.9 Skorzane_fotele
+6 0 1 Toyota Corolla 1.3 Odtwarzacz_CD
+7 0 2 DAF XF105 12.6 Przyczepa
+8 0 1 Skoda Octavia 1.9_TDI Relingi

@@ -27,11 +27,16 @@ void vehicleInfoMenu(int vehicle_choice, int from_which_menu){
 		uzywanePojazdy.at(vehicle_choice)->getVehicleModel();
 		cout << "\n===============================================\n\n";
 
-		cout << "\nAKTUALNIE W TRASIE: Tak\n\n";
+		cout << "\nAKTUALNIE W TRASIE:";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+		cout <<	"TAK\n\n";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
-		cout << "1. Wyswietl aktualna misje\n";
+		cout << "1. Wyswietl aktualna misje\n\n\n\n";
 
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
 		cout << "0. Powrot";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
 		char choice;
 
@@ -84,10 +89,12 @@ void vehicleInfoMenu(int vehicle_choice, int from_which_menu){
 		wolnePojazdy.at(vehicle_choice)->getVehicleModel();
 		cout << "\n===============================================\n\n";
 
-		cout << "\nAKTUALNIE W TRASIE: Nie\n\n";
+		cout << "\nAKTUALNIE W TRASIE:";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
+		cout << "NIE\n\n";
 
 		cout << "0. Powrot\n\n";
-
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 		char choice;
 
 

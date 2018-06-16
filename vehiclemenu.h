@@ -16,10 +16,16 @@ void vehiclemenu(){
 	cout << "================= MENU POJAZDOW ================\n";
 	cout << "================================================\n\n";
 
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "                   1. Pojazdy w uzyciu\n\n";
 	cout << "                   2. Pojazdy dostepne do uzycia\n\n\n\n";
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED| FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 	cout << "                   3. Dodaj pojazd\n\n\n\n\n\n";
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_INTENSITY);
 	cout << "                   4. Powrot\n\n\n\n";
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 
 	cout << "Wybierz opcje: ";
 
