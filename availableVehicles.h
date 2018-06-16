@@ -93,10 +93,11 @@ int availableVehicles(int is_int){
 					else {cout << "\n\nNiepoprawny wybor. Wybierz samochod: "; continue;}
 				}
 
-	int id_acquired;
+	int id_acquired, type_acquired;
 	string brand_acquired, model_acquired, engine_acquired, equipment_acquired;
 
 	wolnePojazdy.at(vehicle_choice-1)->saveVehicleID(&id_acquired);
+	wolnePojazdy.at(vehicle_choice-1)->saveVehicleType(&type_acquired);
 	wolnePojazdy.at(vehicle_choice-1)->saveVehicleBrand(&brand_acquired);
 	wolnePojazdy.at(vehicle_choice-1)->saveVehicleModel(&model_acquired);
 	wolnePojazdy.at(vehicle_choice-1)->saveVehicleEngine(&engine_acquired);
@@ -121,6 +122,8 @@ int availableVehicles(int is_int){
 	Vehicle* v3 = new Vehicle();
 
 	v3->setVehicleID(id_acquired);
+	v3->setVehicleType(type_acquired);
+	v3->setVehicleIsTaken(1);
 	v3->setVehicleBrand(brand_acquired);
 	v3->setVehicleModel(model_acquired);
 	v3->setVehicleEngine(engine_acquired);

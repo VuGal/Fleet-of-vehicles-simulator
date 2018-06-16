@@ -1,4 +1,4 @@
 1 1 1 Ford Fiesta 1.6 GPS
-2 0 1 Peugeot 308 1.6 ESP
-3 0 1 Chevrolet Camaro 3.8 Cabrio
+3 1 1 Chevrolet Camaro 3.8 Cabrio
 4 1 2 Peugeot Boxer 2.5 Hak
+2 0 1 Peugeot 308 1.6 ESP

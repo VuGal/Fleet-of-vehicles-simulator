@@ -22,25 +22,50 @@ void missionInfoMenu(int mission_choice){
 
 	system("CLS");
 
-	int function_employee_id, function_vehicle_id;
+	int mission_employee_id, mission_vehicle_id, employee_id_found, vehicle_id_found, employee_number, vehicle_number;
 
-	listaMisji.at(mission_choice)->saveMissionEmployeeID(&function_employee_id);
-	listaMisji.at(mission_choice)->saveMissionVehicleID(&function_vehicle_id);
+	listaMisji.at(mission_choice)->saveMissionEmployeeID(&mission_employee_id);
+	listaMisji.at(mission_choice)->saveMissionVehicleID(&mission_vehicle_id);
 
+
+	for(unsigned int i = 0; i < listaPracownikow.size(); i++){
+
+			listaPracownikow.at(i)->saveEmployeeID(&employee_id_found);
+
+			if(mission_employee_id == employee_id_found) {
+
+				employee_number = i;
+				break;
+
+			}
+
+		}
+
+	for(unsigned int i = 0; i < listaPojazdow.size(); i++){
+
+				listaPojazdow.at(i)->saveVehicleID(&vehicle_id_found);
+
+				if(mission_vehicle_id == vehicle_id_found) {
+
+					vehicle_number = i;
+					break;}
+
+			}
 
 	cout << "===============================================\n";
 	cout << "                 DANE     MISJI";
 	cout << "\n===============================================\n\n";
 
 	cout << "Pracownik wykonujacy misje: ";
-	listaPracownikow.at(function_employee_id-1)->getEmployeeName();
+
+	listaPracownikow.at(employee_number)->getEmployeeName();
 	cout << " ";
-	listaPracownikow.at(function_employee_id-1)->getEmployeeSurname();
+	listaPracownikow.at(employee_number)->getEmployeeSurname();
 
 	cout << "\nUzywany pojazd: ";
-	listaPojazdow.at(function_vehicle_id-1)->getVehicleBrand();
+	listaPojazdow.at(vehicle_number)->getVehicleBrand();
 	cout << " ";
-	listaPojazdow.at(function_vehicle_id-1)->getVehicleModel();
+	listaPojazdow.at(vehicle_number)->getVehicleModel();
 
 	cout << "\n\n\nZ: ";
 	listaMisji.at(mission_choice)->getMissionStartingPoint();
