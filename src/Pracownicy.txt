@@ -1,0 +1,10 @@
+1 1 Wojciech Galecki 10000
+2 0 Wojciech Przybylo 5000
+3 1 Monika Lis 2500
+4 1 Aleksandra Piechota 6000
+5 0 Kinga Paciuch 7500
+6 0 Konrad Bos 3500
+7 0 Karolina Rapacz 4000
+8 0 Szymon Gawlik 2400
+9 0 Michal Mlodecki 9001
+10 0 Maciej Dziedzic 3500

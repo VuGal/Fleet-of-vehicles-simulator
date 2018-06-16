@@ -1,0 +1,3 @@
+1 1 Krakow Warszawa 200
+4 4 Bydgoszcz Chrzanow 150
+3 3 Lubliniec Warszawa 100
